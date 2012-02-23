@@ -52,6 +52,11 @@
     </filter>
 
     <filter>
+        <filter-name>graphite-poc</filter-name>
+        <filter-class>org.openrepose.components.graphite.GraphiteLoggerFilter</filter-class>
+    </filter>
+
+    <filter>
         <filter-name>service-auth</filter-name>
         <filter-class>com.rackspace.papi.components.serviceauth.ServiceAuthenticationFilter</filter-class>
     </filter>
