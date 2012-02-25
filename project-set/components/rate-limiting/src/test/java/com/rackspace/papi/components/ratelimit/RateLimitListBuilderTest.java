@@ -62,7 +62,18 @@ public class RateLimitListBuilderTest extends RateLimitTestContext {
         }
 
         @Test
-        public void shouldMarshallContentsCorrectly() {
+        public void shouldMarshallContentsCorrectly() throws Exception {
+            final RateLimitList rll = new RateLimitListBuilder(cacheMap, configuredLimitGroup).toRateLimitList();
+
+            final Limits limits = new Limits();
+            limits.setRates(rll);
+
+            System.out.println(ENTITY_TRANSFORMER.entityAsJson(limits));
+            System.out.println(ENTITY_TRANSFORMER.entityAsXml(limits));
+        }
+
+        @Test
+        public void shouldMarshallContents() throws Exception {
             final RateLimitList rll = new RateLimitListBuilder(cacheMap, configuredLimitGroup).toRateLimitList();
 
             final Limits limits = new Limits();
